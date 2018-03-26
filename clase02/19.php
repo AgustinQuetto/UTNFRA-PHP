@@ -27,7 +27,8 @@ class FiguraGeometrica {
     }
 
     public function Dibujar() {
-
+        print("<div style='display: flex'>");
+        print("<div style='flex-direction: row'>");
         for ($i=0; $i < $this->_perimetro; $i++) {
             for($j = 0; $j < $this->_perimetro - $i - 1; $j++) {
                 print("&nbsp;");
@@ -37,15 +38,17 @@ class FiguraGeometrica {
             }
             print("<br/>");
         }
+        print("</div>");
 
-        print("<br/>");
-
+        print("<div style='flex-direction: row; margin-left: 20px;'>");
         for ($i=0; $i < $this->_perimetro; $i++) {
             for($j = 0; $j < $this->_superficie; $j++) {
                 print('<span style="color:'.$this->_color.'">*</span>');
             }
             print("<br/>");
         }
+        print("</div>");
+        print("</div>");
     }
 }
 
