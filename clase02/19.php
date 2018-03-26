@@ -23,34 +23,35 @@ class FiguraGeometrica {
     }
 
     function toString() {
-        return $this->getColor();
+        print("Color: ".$this->getColor()." | Superficie: ".$this->_superficie." | Perimetro: ".$this->_perimetro);
+        $this->dibujar();
     }
 
-    public function Dibujar() {
+    public function dibujar() {
         print("<div style='display: flex'>");
-        print("<div style='flex-direction: row'>");
-        for ($i=0; $i < $this->_perimetro; $i++) {
-            for($j = 0; $j < $this->_perimetro - $i - 1; $j++) {
-                print("&nbsp;");
+            print("<div style='flex-direction: row'>");
+            for ($i=0; $i < $this->_perimetro; $i++) {
+                for($j = 0; $j < $this->_perimetro - $i - 1; $j++) {
+                    print("&nbsp;");
+                }
+                for($j = 0; $j <= $i; $j++) {
+                    print('<span style="color:'.$this->_color.'">*</span>');
+                }
+                print("<br/>");
             }
-            for($j = 0; $j <= $i; $j++) {
-                print('<span style="color:'.$this->_color.'">*</span>');
-            }
-            print("<br/>");
-        }
-        print("</div>");
+            print("</div>");
 
-        print("<div style='flex-direction: row; margin-left: 20px;'>");
-        for ($i=0; $i < $this->_perimetro; $i++) {
-            for($j = 0; $j < $this->_superficie; $j++) {
-                print('<span style="color:'.$this->_color.'">*</span>');
+            print("<div style='flex-direction: row; margin-left: 20px;'>");
+            for ($i=0; $i < $this->_perimetro; $i++) {
+                for($j = 0; $j < $this->_superficie; $j++) {
+                    print('<span style="color:'.$this->_color.'">*</span>');
+                }
+                print("<br/>");
             }
-            print("<br/>");
-        }
-        print("</div>");
+            print("</div>");
         print("</div>");
     }
 }
 
 $figura = new FiguraGeometrica("red", 7, 3);
-$figura->Dibujar();
+$figura->toString();
