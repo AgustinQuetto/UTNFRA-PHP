@@ -40,8 +40,8 @@ class FiguraGeometrica {
 
         print("<br/>");
 
-        for ($i=0; $i < $this->_perimetro/2; $i++) {
-            for($j = 0; $j < $this->_perimetro/2; $j++) {
+        for ($i=0; $i < $this->_perimetro; $i++) {
+            for($j = 0; $j < $this->_superficie; $j++) {
                 print('<span style="color:'.$this->_color.'">*</span>');
             }
             print("<br/>");
@@ -49,5 +49,5 @@ class FiguraGeometrica {
     }
 }
 
-$figura = new FiguraGeometrica("red", 4, 5);
+$figura = new FiguraGeometrica("red", 7, 3);
 $figura->Dibujar();
